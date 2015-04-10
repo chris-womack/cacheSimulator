@@ -239,8 +239,9 @@ int access(char op, unsigned long long int address) //this assumes address is a 
     
     if(op == 'R'){//read data
 	    
-	    if (inL1d(address))
+	    if (inL1d(address)){
 	        cycles+=L1_hit_time;
+	    }
 	    else{
 	        cycles+=L1_miss_time;
 	        if(inL2(address)){ // not in L1 cache but in L2 
@@ -254,11 +255,11 @@ int access(char op, unsigned long long int address) //this assumes address is a 
 	        }
 	   	}
     }
-
     else if(op == 'I'){//read inst
         
-        if (inL1i(address))
+        if (inL1i(address)){
             cycles+=L1_hit_time;
+        }
 	    else{
 	        cycles+=L1_miss_time;
 	        if(inL2(address)){ // not in L1 cache but in L2 
@@ -272,7 +273,6 @@ int access(char op, unsigned long long int address) //this assumes address is a 
 	        }
     	}
     }
-
     else if(op == 'W'){//write
 	    if (inL1d(address)){
 	        cycles+=L1_hit_time;
@@ -282,26 +282,25 @@ int access(char op, unsigned long long int address) //this assumes address is a 
 	        if(inL2(address)){ // not in L1 cache but in L2 
 	            cycles+=L2_hit_time+L1_hit_time+(L2_transfer_time*( ((float) L1_block_size) / ((float ) L2_bus_width) ));
 	            loadL1d(address); // put it in the L1 cache after accessing it from the L2 cache.
-	    }
-        else{
-                cycles+=L2_miss_time+mem_sendaddr+mem_ready+ (((float)(mem_chunktime*L2_block_size))/((float) mem_chunksize))+L2_hit_time+L1_hit_time+(L2_transfer_time*( ((float) L1_block_size) / ((float ) L2_bus_width) ));
-                loadL2(address);
-                loadL1d(address);
+	    	}
+	        else{
+	                cycles+=L2_miss_time+mem_sendaddr+mem_ready+ (((float)(mem_chunktime*L2_block_size))/((float) mem_chunksize))+L2_hit_time+L1_hit_time+(L2_transfer_time*( ((float) L1_block_size) / ((float ) L2_bus_width) ));
+	                loadL2(address);
+	                loadL1d(address);l
+        	}
         }
 	}
-
-    dirtyL1d(1,address); // Mark the L1 block dirty. L2 is left clean as per the instructions.
-	
-	else
+	else{
+		dirtyL1d(1,address); // Mark the L1 block dirty. L2 is left clean as per the instructions.
 	    return -1; 
-	
+	}
+
+	dirtyL1d(1,address); // Mark the L1 block dirty. L2 is left clean as per the instructions.
 	return cycles;
 }
 
+int main(){
 
-
-int main()
-{
     char op;
     unsigned long long int address;
     unsigned int bytesize;

@@ -3,15 +3,15 @@ Cache Simulator for ECEN 4593 (Comp Org)
 
 ## Using cacheSim
 ### Unzipped
-'''bash
+```bash
 ./<simulator name> <config file> < <tracefile name>
 ./cachSim config.txt < traces-short/tr1
-'''
+```
 ### Zipped
-'''bash
+```bash
 zcat <tracefile name> | <simulator name> <config file>
 zcat bzip2.gz | cacheSim config.txt
-'''
+```
 
 ## Traces
 ### Short Traces

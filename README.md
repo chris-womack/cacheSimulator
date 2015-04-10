@@ -19,9 +19,11 @@ Cache Simulator for ECEN 4593 (Comp Org)
 	# pulls master repo to update your local repo if changes have been made. 
 	# Should be done before every code session.
 	git pull origin master
+	git pull origin <branch name>
 
 	# push to the master repo. this is were we run into conflictsS
 	git push origin master
+	git push origin <branch name>
 
 	# creates branch that will be seperate from master
 	git branch <branch name>
@@ -29,7 +31,7 @@ Cache Simulator for ECEN 4593 (Comp Org)
 	# moves from current branch or master to branch specified
 	git checkout <branch name>
 
-	# merges current branch (you location) with <branch name> 
+	# merges current branch (you location) with <branch name> asub
 	# So its another point where conflicts can occur
 	git merge <branch name>
 

@@ -11,7 +11,7 @@ CFLAGS  = -g -Wall
 # the build target executable:
 TARGET = cacheSim
 
-TAR1 = main2
+TAR1 = main
 TAR2 = L1
 TAR3 = L2
 TAR4 = gen

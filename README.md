@@ -4,30 +4,33 @@ Cache Simulator for ECEN 4593 (Comp Org)
 ## GitHub Crash Course
 
 ```bash
-	# clones repo to local
+	# clones repo to local (only done once)
 	git clone https://github.com/chris-womack/cacheSimulator.git
 
-	# this will add all new files in the dir that you've created
+	# this will add all(.) new files in the dir that you've created
 	git add .
 
 	# add specific file
 	git add <file Name>
 
-	# commits or saves the changes you've made
+	# commits or saves all(-a) the changes you've made. use comments to keep track (-m)
 	git commit -am "comment"
 
-	# push to the master repo. this is were we run into confilcts
+	# pulls master repo to update your local repo if changes have been made. 
+	# Should be done before every code session.
+	git pull origin master
+
+	# push to the master repo. this is were we run into conflictsS
 	git push origin master
 
 	# creates branch that will be seperate from master
-	git branch nate
+	git branch <branch name>
 
 	# moves from current branch or master to branch specified
-	git checkout nate
+	git checkout <branch name>
 
-	# this will merge branch with master so its another point of conflicts
-	# while on seperate branch
-	git merge master
+	# merges current branch (you location) with <branch name> so its another point where conflicts can occur
+	git merge <branch name>
 
 ```
 

@@ -29,14 +29,13 @@ The short traces are:
 Located in traces-long. (will upload later)
 The long (production) traces are:
 
-* bzip2.gz        Block sorting compression
-* h264ref.gz      Video compression
-* omnetpp.gz      Discrete event simulation library
-* libquantum.gz   Quantum computer simulation
-* sjeng.gz        Chess game
+* bzip2.gz 			Block sorting compression
+* h264ref.gz 		Video compression
+* omnetpp.gz 		Discrete event simulation library
+* libquantum.gz 	Quantum computer simulation
+* sjeng.gz 			Chess game
 
 ### Other Traces
 The traces-1M and traces-5M directories contain the first 1 million
-and 5 million instruction, respectively, of the long traces.
-For these, there are compressed and uncompressed versions of
+and 5 million instruction of the long traces. There are compressed and uncompressed versions of
 the traces.

@@ -62,7 +62,7 @@ The short traces are:
   * tr6
 
 ### Long Traces
-Located in traces-long. (will upload later)
+Located in traces-long.
 The long (production) traces are:
 
 * bzip2.gz 			Block sorting compression

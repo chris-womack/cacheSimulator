@@ -2,16 +2,20 @@
 Cache Simulator for ECEN 4593 (Comp Org)
 
 ## Using cacheSim
-## Unzipped
+### Unzipped
+'''bash
 ./<simulator name> <config file> < <tracefile name>
-ex: ./cachSim config.txt < traces-short/tr1
-## Zipped
+./cachSim config.txt < traces-short/tr1
+'''
+### Zipped
+'''bash
 zcat <tracefile name> | <simulator name> <config file>
-ex: zcat bzip2.gz | cacheSim config.txt
+zcat bzip2.gz | cacheSim config.txt
+'''
 
 ## Traces
 ### Short Traces
-Located in traces-short
+Located in traces-short.
 The short traces are:
 
   * tr1
@@ -22,7 +26,7 @@ The short traces are:
   * tr6
 
 ### Long Traces
-Located in traces-long (will upload later)
+Located in traces-long. (will upload later)
 The long (production) traces are:
 
 * bzip2.gz        Block sorting compression

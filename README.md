@@ -1,6 +1,36 @@
 # cacheSimulator
 Cache Simulator for ECEN 4593 (Comp Org)
 
+## GitHub Crash Course
+
+```bash
+	# clones repo to local
+	git clone https://github.com/chris-womack/cacheSimulator.git
+
+	# this will add all new files in the dir that you've created
+	git add .
+
+	# add specific file
+	git add <file Name>
+
+	# commits or saves the changes you've made
+	git commit -am "comment"
+
+	# push to the master repo. this is were we run into confilcts
+	git push origin master
+
+	# creates branch that will be seperate from master
+	git branch nate
+
+	# moves from current branch or master to branch specified
+	git checkout nate
+
+	# this will merge branch with master so its another point of conflicts
+	# while on seperate branch
+	git merge master
+
+```
+
 ## Using cacheSim
 ### Unzipped
 ```bash

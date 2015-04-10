@@ -29,7 +29,8 @@ Cache Simulator for ECEN 4593 (Comp Org)
 	# moves from current branch or master to branch specified
 	git checkout <branch name>
 
-	# merges current branch (you location) with <branch name> so its another point where conflicts can occur
+	# merges current branch (you location) with <branch name> 
+	# So its another point where conflicts can occur
 	git merge <branch name>
 
 ```

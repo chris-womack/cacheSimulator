@@ -1,7 +1,11 @@
 /* General Library for CacheSim */
 
 // Prints all valid cache blocks
-int printCache();
+int printCacheL1();
+
+// Prints all valid cache blocks
+int printCacheL2();
+
 // Flushes cache every 380,000 cycles
 int cacheFlush();
 

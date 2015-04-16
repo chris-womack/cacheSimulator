@@ -66,6 +66,9 @@ int main(int argc, char *argv[]){
 
     printf("%Ld\n",totalexec);
 
+    printCacheL1();
+    printCacheL2();
+
     // dealloc cache arrays
     free(dmL1i);
     free(dmL1d);

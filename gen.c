@@ -5,17 +5,29 @@
 #include "gen.h"
 #include "configlib.h"
 
-int printCache(){
+int printCacheL1(){
     int i;
+    printf("\n");
+    printf("Valid Blocks in L1 Instruction Cache\n");
+    printf("\n");
     for(i = 0; i < (L1_cache_size/L1_block_size); i++){
-        printf("\n");
-        printf("Valid Blocks in L1 Cache\n");
-        printf("\n");
-        printf("");
-        
+    	printf("Block: %d 	Address: 0x%llx 			Dirty: %d \n", i, dmL1i[i].addr, dmL1i[i].dirty);
     }
+	printf("\n");
+	printf("Valid Blocks in L1 Data Cache\n");
+	printf("\n");
     for(i = 0; i < (L2_cache_size/L2_block_size); i++){
+    	printf("Block: %d 	Address: 0x%llx 		Dirty: %d \n", i, dmL1d[i].addr, dmL1d[i].dirty);
+    }
+}
 
+int printCacheL2(){
+    int i;
+    printf("\n");
+    printf("Valid Blocks in L2 Cache\n");
+    printf("\n");
+    for(i = 0; i < (L1_cache_size/L1_block_size); i++){
+    	printf("Block: %d 	Address: 0x%llx 			Dirty: %d \n", i, dmL2[i].addr, dmL2[i].dirty);
     }
 }
 

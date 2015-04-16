@@ -32,7 +32,7 @@ int main(int argc, char *argv[]){
     
     // initialize cache arrays from config
     dmL1i = malloc(((L1_cache_size/2)/L1_block_size)*sizeof(dmEntry));
-    dmL1d = malloc((L1_cache_size/2)/L1_block_size)*sizeof(dmEntry));
+    dmL1d = malloc(((L1_cache_size/2)/L1_block_size)*sizeof(dmEntry));
     dmL2  = malloc((L2_cache_size/L2_block_size)*sizeof(dmEntry));
 
     faL1i = malloc(((L1_cache_size/2)/L1_block_size)*sizeof(faEntry));

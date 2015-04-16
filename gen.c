@@ -18,7 +18,7 @@ int printCacheL1(){
 	printf("\n");
 	printf("Valid Blocks in L1 Data Cache\n");
 	printf("\n");
-    for(i = 0; i < ((L1_cache_size/2)/L2_block_size); i++){
+    for(i = 0; i < ((L1_cache_size/2)/L1_block_size); i++){
     	if(dmL1d[i].addr != 0)
     		printf("Block: %d 	Address: 0x%llx 		Dirty: %d \n", i, dmL1d[i].addr, dmL1d[i].dirty);
     }
@@ -32,7 +32,7 @@ int printCacheL1(){
 	printf("\n");
 	printf("All Blocks in L1 Data Cache\n");
 	printf("\n");
-    for(i = 0; i < ((L1_cache_size/2)/L2_block_size); i++){
+    for(i = 0; i < ((L1_cache_size/2)/L1_block_size); i++){
     	printf("Block: %d 	Address: 0x%llx 		Dirty: %d \n", i, dmL1d[i].addr, dmL1d[i].dirty);
     }
 }
@@ -42,14 +42,14 @@ int printCacheL2(){
     printf("\n");
     printf("Valid Blocks in L2 Cache\n");
     printf("\n");
-    for(i = 0; i < (L2_cache_size/L1_block_size); i++){
+    for(i = 0; i < (L2_cache_size/L2_block_size); i++){
     	if(dmL2[i].addr != 0)
     		printf("Block: %d 	Address: 0x%llx 			Dirty: %d \n", i, dmL2[i].addr, dmL2[i].dirty);
     }
     printf("\n");
     printf("All Blocks in L2 Cache\n");
     printf("\n");
-    for(i = 0; i < (L2_cache_size/L1_block_size); i++){
+    for(i = 0; i < (L2_cache_size/L2_block_size); i++){
     	printf("Block: %d 	Address: 0x%llx 			Dirty: %d \n", i, dmL2[i].addr, dmL2[i].dirty);
     }
 }

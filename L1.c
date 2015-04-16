@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "L1.h"
+#include "L2.h"
+#include "gen.h"
 #include "configlib.h"
 
 int inL1i(unsigned long long int address){

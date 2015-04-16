@@ -31,16 +31,16 @@ int main(int argc, char *argv[]){
         configRead(NULL);
     
     // initialize cache arrays from config
-    dmL1i = malloc((L1_cache_size/L1_block_size)*sizeof(dmEntry));
-    dmL1d = malloc((L1_cache_size/L1_block_size)*sizeof(dmEntry));
+    dmL1i = malloc(((L1_cache_size/2)/L1_block_size)*sizeof(dmEntry));
+    dmL1d = malloc((L1_cache_size/2)/L1_block_size)*sizeof(dmEntry));
     dmL2  = malloc((L2_cache_size/L2_block_size)*sizeof(dmEntry));
 
-    faL1i = malloc((L1_cache_size/L1_block_size)*sizeof(faEntry));
-    faL1d = malloc((L1_cache_size/L1_block_size)*sizeof(faEntry));
+    faL1i = malloc(((L1_cache_size/2)/L1_block_size)*sizeof(faEntry));
+    faL1d = malloc(((L1_cache_size/2)/L1_block_size)*sizeof(faEntry));
     faL2  = malloc((L2_cache_size/L2_block_size)*sizeof(faEntry));
 
-    saL1i = malloc((L1_cache_size/L1_block_size)*sizeof(saEntry));
-    saL1d = malloc((L1_cache_size/L1_block_size)*sizeof(saEntry));
+    saL1i = malloc(((L1_cache_size/2)/L1_block_size)*sizeof(saEntry));
+    saL1d = malloc(((L1_cache_size/2)/L1_block_size)*sizeof(saEntry));
     saL2  = malloc((L2_cache_size/L2_block_size)*sizeof(saEntry));
 
     // 

@@ -1,9 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "L1.h"
+#include "L2.h"
 #include "gen.h"
 #include "configlib.h"
 
-int cache_flush(){
+int printCache(){
+    int i;
+    for(i = 0; i < (L1_cache_size/L1_block_size); i++){
+        printf("\n");
+        printf("Valid Blocks in L1 Cache\n");
+        printf("\n");
+        printf("");
+        
+    }
+    for(i = 0; i < (L2_cache_size/L2_block_size); i++){
+
+    }
+}
+
+int cacheFlush(){
+    int i;
+    for(i =0; i < (L1_cache_size/L1_block_size); i++){
+
+    }
     return 0; 
 }; 
 

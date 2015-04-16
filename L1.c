@@ -54,7 +54,7 @@ int loadL1i(unsigned long long int address){
     int index;
     if(DIRECT_MAPPED){
         index = (address & (~0xF)) >> 4;
-        index = index & ((L1_cache_size/L1_block_size)-1); 
+        index = index & ((L1_cache_size/(L1_block_size*2))-1); 
         if(dmL1i[index].addr == 0){ // cache spot is empty
             dmL1i[index].addr=(address & (~0xF)); 
             }
@@ -79,7 +79,7 @@ int loadL1d(unsigned long long int address){
     int index;
     if(DIRECT_MAPPED){
         index = (address & (~0xF)) >> 4;
-        index = index & ((L1_cache_size/L1_block_size)-1);
+        index = index & ((L1_cache_size/(L1_block_size*2))-1);
         if(dmL1d[index].addr == 0){ // cache spot is empty
             dmL1d[index].addr=(address & (~0xF)); 
         }

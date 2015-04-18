@@ -107,11 +107,46 @@ int main(int argc, char *argv[]){
         printf("\n");
     #endif /* DEBUG */
 
-    // initialize cache arrays from config
+    // Direct Mapped Array
     dmL1i = calloc(blockNumL1,sizeof(dmEntry));
     dmL1d = calloc(blockNumL1,sizeof(dmEntry));
     dmL2  = calloc(blockNumL2,sizeof(dmEntry));
 
+    // Fully Associative Fifo's
+    faL1iHead = malloc(sizeof(faEntry));
+    faL1iTail = faL1iHead;
+
+    faL1dHead = malloc(sizeof(faEntry));
+    faL1dTail = faL1dHead;
+
+    i = 0;
+    while(i < blockNumL1){
+        //build L1 inst Cache
+        faL1iCurr = malloc(sizeof(faEntry));
+        faL1iCurr->prev = faL1iTail;
+        faL1iTail->next = faL1iCurr;
+        faL1iTail = faL1iCurr;
+
+        //build L1 data Cache
+        faL1dCurr = malloc(sizeof(faEntry));
+        faL1dCurr->prev = faL1dTail;
+        faL1dTail->next = faL1dCurr;
+        faL1dTail = faL1dCurr;
+    }; i = 0;
+
+    faL2Head = malloc(sizeof(faEntry));
+    faL2Curr = faL2Head;
+    faL2Tail = faL2Head;
+    
+    while(i < blockNumL2){
+        //build L2 Cache
+        faL2Curr = malloc(sizeof(faEntry));
+        faL2Curr->prev = faL2Tail;
+        faL2Tail->next = faL2Curr;
+        faL2Tail = faL2Curr;
+    }; i = 0;
+
+    // Set Associative Array of Fifo's
     saL1i = calloc(blockNumL1,sizeof(saEntry));
     saL1d = calloc(blockNumL1,sizeof(saEntry));
     saL2  = calloc(blockNumL2,sizeof(saEntry));

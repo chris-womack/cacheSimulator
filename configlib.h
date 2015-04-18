@@ -115,12 +115,15 @@ dmEntry* dmL1i;
 dmEntry* dmL1d;
 dmEntry* dmL2;
 
-faEntry* faL1ihead;
-faEntry* faL1itail;
-faEntry* faL1dhead;
-faEntry* faL1dtail;
-faEntry* faL2head;
-faEntry* faL2tail;
+faEntry* faL1iHead;
+faEntry* faL1iCurr;
+faEntry* faL1iTail;
+faEntry* faL1dHead;
+faEntry* faL1dCurr;
+faEntry* faL1dTail;
+faEntry* faL2Head;
+faEntry* faL2Curr;
+faEntry* faL2Tail;
 
 saEntry* saL1i;
 saEntry* saL1d;
